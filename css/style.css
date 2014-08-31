@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('fonts/OpenSans-Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'open_sanslight';
+  src: url('fonts/OpenSans-Light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+html, body { height: 100%; }
+
+body {
+  color: #666;
+  font-family: open_sanslight, sans-serif;
+
+  /* Reset base size */
+  font-size: 16px;
+
+  /* Set font size relative to base size */
+  /* Check article on rem usage: http://snook.ca/archives/html_and_css/font-size-with-rem */
+  font-size: 1.4rem;
+
+  font-weight: 300;
+
+  /* Remove spacing */
+  margin: 0;
+
+  overflow: hidden;
+}
+
+
+h1, h2, h3, h4, h5, h6 { font-weight: 300; }
+
+strong { font-weight: bold; }
+
+a {
+  border-bottom: 1px dotted #666;
+  color: #444;
+  text-decoration: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+a:hover { color: #00b9ff; }
+
+input, textarea, select {
+  font-family: open_sanslight, sans-serif;
+}
+input[type=text],
+input[type=search],
+textarea {
+  border: 1px solid #ddd;
+  padding: .5rem;
+}
+
+
+#header {
+  background: #444;
+  color: #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+
+#logo {
+  display: inline-block;
+  margin: 0 0 0 .6rem;
+}
+
+
+#content > * {
+  position: relative;
+  top: 4rem;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+
+#view-flickr > .flickr-form-search {
+  margin: 1rem 0 0 0;
+  text-align: center;
+}
+#view-flickr > .flickr-form-search > [type=search] {
+  width: 20rem;
+}
+#view-flickr > .search-results {
+  margin: 2rem 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: fixed;
+  top: 6rem;
+  bottom: 0;
+  overflow-y: auto;
+}
+#view-flickr > .search-results > article {
+  border: 1rem solid #f8f8f8;
+  box-shadow: 0 2px 8px #ccc, inset 0 0 2px #ddd;
+  border-bottom-width: 2rem;
+  padding: 1rem;
+  margin: 2rem;
+}
+
+#view-mod-x {
+  text-align: center;
+}
+
+
+#loading {
+  background: #eee;
+  box-shadow: 0 1px 4px #bbb;
+  color: #333;
+  padding: .6rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  text-align: center;
+}
+
+
+.main-menu {
+  float: right;
+  line-height: 3.5rem;
+}
+.main-menu li {
+  float: left;
+  padding: 0 1rem;
+}
+.main-menu a {
+  color: #bbb;
+}
+.main-menu a:hover {
+  color: #eee;
+}
+
+.reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hide {
+  display: none !important;
+}
