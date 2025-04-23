@@ -1,0 +1,37 @@
+name: Test Workflow
+
+on: workflow_dispatch
+
+env:
+  GITHUB_BRANCH_OR_TAG: "${{ github.ref_name }}"
+
+jobs:
+  deploy-to-sandbox:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+
+    strategy:
+      matrix:
+        REGION: [us, eu]
+        S3_BUCKET: [kt-webapp-phoenix-preview, motive--webapp--prvw--euc1--dashboard]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      # with:
+      #   ref: ${{ env.GITHUB_BRANCH_OR_TAG }}
+
+    - name: Setup Node Version
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14.21.3'
+
+    - name: Npm Install
+      run: |
+        echo 'npm install'
+        sleep 10
+
+    - name: Matrix combinations
+      run: |
+        echo ${{ matrix.REGION }}, ${{ matrix.S3_BUCKET }}
+        sleep 10
